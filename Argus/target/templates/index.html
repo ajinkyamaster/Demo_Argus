@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Capsule Trust &amp; Savings — Private Banking{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div style="display:grid;grid-template-columns:1fr 0.7fr;gap:3rem;align-items:start;padding-top:1rem;">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <span class="label">Est. 1981 · Private Banking &amp; Treasury Services</span>
+
+      <h1 style="font-family:var(--font-display);font-size:3.2rem;font-weight:500;line-height:1.15;color:var(--text-primary);margin-top:1rem;">
+        Institutional Capital.<br>Precisely Managed.
+      </h1>
+
+      <p style="font-family:var(--font-ui);font-size:0.95rem;color:var(--text-secondary);max-width:480px;margin-top:1.2rem;line-height:1.7;">
+        Capsule Trust &amp; Savings delivers bespoke wealth management,
+        commercial lending, and multi-currency treasury services
+        to institutional clients across 34 jurisdictions. Four
+        decades of fiduciary discipline — zero compromises.
+      </p>
+
+      <div style="display:flex;gap:1rem;margin-top:2rem;">
+        <a href="/login" class="btn btn-primary" style="width:auto">Client Login →</a>
+        <a href="/corp/legacy-auth" class="btn btn-ghost" style="width:auto">Legacy Migration Gateway</a>
+      </div>
+
+      <div style="display:flex;gap:2.5rem;margin-top:3rem;align-items:flex-start;">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:1.6rem;color:var(--text-primary);font-weight:400;">$84.2B</div>
+          <div class="label" style="margin-top:0.35rem;">Assets Under Management</div>
+        </div>
+        <div style="width:1px;height:48px;background:var(--border);flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:1.6rem;color:var(--text-primary);font-weight:400;">34</div>
+          <div class="label" style="margin-top:0.35rem;">Jurisdictions</div>
+        </div>
+        <div style="width:1px;height:48px;background:var(--border);flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:1.6rem;color:var(--text-primary);font-weight:400;">99.97%</div>
+          <div class="label" style="margin-top:0.35rem;">Uptime SLA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN — Market Snapshot -->
+    <div class="card" style="margin-top:2.8rem;">
+      <div class="card-header">
+        <span class="card-header-title">Market Snapshot</span>
+        <span class="badge badge-green">Live</span>
+      </div>
+      <div class="card-body" style="padding:0;">
+        <div style="display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1.25rem;border-bottom:1px solid var(--border-soft);">
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-primary);">SPX</span>
+            <span style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-secondary);">5,847.23</span>
+              <span style="font-size:0.72rem;color:var(--green);">+0.34% ▲</span>
+            </span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1.25rem;border-bottom:1px solid var(--border-soft);">
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-primary);">DJI</span>
+            <span style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-secondary);">42,391.05</span>
+              <span style="font-size:0.72rem;color:var(--green);">+0.18% ▲</span>
+            </span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1.25rem;border-bottom:1px solid var(--border-soft);">
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-primary);">CAPT</span>
+            <span style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-secondary);">184.60</span>
+              <span style="font-size:0.72rem;color:var(--red);">-0.72% ▼</span>
+            </span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1.25rem;border-bottom:1px solid var(--border-soft);">
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-primary);">GOLD</span>
+            <span style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-secondary);">2,341.80</span>
+              <span style="font-size:0.72rem;color:var(--green);">+0.63% ▲</span>
+            </span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1.25rem;border-bottom:1px solid var(--border-soft);">
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-primary);">BTC</span>
+            <span style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-secondary);">68,204.00</span>
+              <span style="font-size:0.72rem;color:var(--red);">-1.14% ▼</span>
+            </span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1.25rem;">
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-primary);">WTI</span>
+            <span style="display:flex;align-items:center;gap:0.6rem;">
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-secondary);">79.45</span>
+              <span style="font-size:0.72rem;color:var(--green);">+0.28% ▲</span>
+            </span>
+          </div>
+        </div>
+        <div style="padding:0.65rem 1.25rem;border-top:1px solid var(--border-soft);font-size:0.65rem;color:var(--text-muted);">
+          Data delayed 15 min · Capsule Trust Research Desk
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FEATURE CARDS -->
+  <div class="divider" style="margin:3rem 0;"></div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-body">
+        <div style="width:24px;height:24px;border:1px solid var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.55rem;color:var(--gold);margin-bottom:1rem;">PW</div>
+        <div style="font-size:0.88rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">Private Wealth Management</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);line-height:1.65;">
+          Bespoke portfolio construction for UHNW clients and
+          family offices. Minimum relationship: $10M AUM.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div style="width:24px;height:24px;border:1px solid var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.55rem;color:var(--gold);margin-bottom:1rem;">TS</div>
+        <div style="font-size:0.88rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">Corporate Treasury</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);line-height:1.65;">
+          Multi-currency accounts, FX hedging, and liquidity
+          management for institutional counterparties.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div style="width:24px;height:24px;border:1px solid var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.55rem;color:var(--gold);margin-bottom:1rem;">RC</div>
+        <div style="font-size:0.88rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">Regulatory Compliance</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);line-height:1.65;">
+          Dedicated compliance officers for AML, KYC, and
+          cross-border reporting obligations.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

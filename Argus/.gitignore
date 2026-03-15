@@ -1,0 +1,54 @@
+# ── Python ──────────────────────────────
+.venv/
+.python-version
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# ── Node / frontend ──────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+
+# ── Next.js (frontend/) ──────────────────
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+frontend/package-lock.json
+frontend/next-env.d.ts
+
+# ── Vite (argus-landing/) ────────────────
+argus-landing/dist/
+argus-landing/dist-ssr/
+argus-landing/node_modules/
+argus-landing/package-lock.json
+
+# ── Environment & secrets ────────────────
+.env
+.env.local
+.env.*.local
+*.local
+
+# ── Editor & OS ──────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.sw?
+
+# ── Misc ────────────────────────────────
+*.log
+logs/
+*.pdf

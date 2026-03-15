@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}Capsule Trust &amp; Savings — Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <!-- PAGE HEADER -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <span class="label">Welcome Back</span>
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--text-primary);margin-top:0.3rem;">{{ username }}</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:0.78rem;color:var(--text-muted);font-family:var(--font-mono);">{{ now if now else 'Friday, 14 March 2026' }}</div>
+      <div style="margin-top:0.35rem;"><span class="badge badge-green">● Session Active</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- KPI ROW -->
+  <div class="grid-3" style="margin-bottom:1.5rem;">
+
+    <div class="card card-static">
+      <div class="card-header">
+        <span class="card-header-title">Portfolio Value</span>
+        <span class="badge badge-green">▲ +2.34%</span>
+      </div>
+      <div class="card-body">
+        <div style="font-family:var(--font-mono);font-size:1.8rem;color:var(--text-primary);font-weight:400;">$4,284,901.00</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.35rem;">As of market close · USD</div>
+      </div>
+    </div>
+
+    <div class="card card-static">
+      <div class="card-header">
+        <span class="card-header-title">Pending</span>
+        <span class="badge badge-yellow">3 Items</span>
+      </div>
+      <div class="card-body">
+        <div style="font-family:var(--font-mono);font-size:1.8rem;color:var(--text-primary);font-weight:400;">3</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.35rem;">Wire transfers awaiting settlement</div>
+      </div>
+    </div>
+
+    <div class="card card-static">
+      <div class="card-header">
+        <span class="card-header-title">Risk Profile</span>
+        <span class="badge badge-blue">Moderate</span>
+      </div>
+      <div class="card-body">
+        <div style="font-family:var(--font-mono);font-size:1.8rem;color:var(--text-primary);font-weight:400;">B+</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.35rem;">Last reviewed: Q4 2025</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div style="display:grid;grid-template-columns:1.85fr 1fr;gap:1.5rem;">
+
+    <!-- LEFT — Internal Tools -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-header-title">Internal Tools</span>
+        <span class="badge badge-blue">Staff Access</span>
+      </div>
+      <div class="card-body">
+
+        <!-- Tool Row 1 — Wire Transfer Archives -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border-soft);">
+          <div style="display:flex;align-items:center;gap:0.85rem;">
+            <div style="width:36px;height:36px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-elevated);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);flex-shrink:0;">WT</div>
+            <div>
+              <span style="display:block;font-size:0.88rem;color:var(--text-primary);font-weight:600;">Wire Transfer Archives</span>
+              <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:0.15rem;">Access completed receipts and audit records</span>
+            </div>
+          </div>
+          <a href="/api/v1/vault/receipt/1" class="btn btn-ghost btn-sm">Open Archive →</a>
+        </div>
+
+        <!-- Tool Row 2 — Dispute Management -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border-soft);">
+          <div style="display:flex;align-items:center;gap:0.85rem;">
+            <div style="width:36px;height:36px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-elevated);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);flex-shrink:0;">DM</div>
+            <div>
+              <span style="display:block;font-size:0.88rem;color:var(--text-primary);font-weight:600;">Dispute Management Console</span>
+              <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:0.15rem;">Search and review merchant dispute filings</span>
+            </div>
+          </div>
+          <a href="/admin/disputes/search?merchant=ACME+Retail" class="btn btn-ghost btn-sm">Open Console →</a>
+        </div>
+
+        <!-- Tool Row 3 — Legacy Migration -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;">
+          <div style="display:flex;align-items:center;gap:0.85rem;">
+            <div style="width:36px;height:36px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-elevated);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);flex-shrink:0;">LM</div>
+            <div>
+              <span style="display:block;font-size:0.88rem;color:var(--text-primary);font-weight:600;">Legacy Migration Gateway</span>
+              <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:0.15rem;">Authenticate clients from legacy core banking</span>
+            </div>
+          </div>
+          <a href="/corp/legacy-auth" class="btn btn-ghost btn-sm">Access Portal →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT — Recent Activity -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-header-title">Recent Activity</span>
+        <span style="font-size:0.72rem;color:var(--text-muted);">Last 7 days</span>
+      </div>
+      <div class="card-body" style="padding:0.5rem 1.25rem;">
+
+        <!-- Activity 1 -->
+        <div style="padding:0.65rem 0;border-bottom:1px solid var(--border-soft);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span style="font-size:0.8rem;color:var(--text-secondary);">Inbound Wire — MERIDIAN CORP</span>
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--green);">+$280,000.00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.3rem;">
+            <span style="font-size:0.68rem;color:var(--text-muted);font-family:var(--font-mono);">Mar 12</span>
+            <span class="badge badge-green">Settled</span>
+          </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div style="padding:0.65rem 0;border-bottom:1px solid var(--border-soft);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span style="font-size:0.8rem;color:var(--text-secondary);">FX Conversion USD→EUR</span>
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--red);">-$45,200.00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.3rem;">
+            <span style="font-size:0.68rem;color:var(--text-muted);font-family:var(--font-mono);">Mar 11</span>
+            <span class="badge badge-green">Settled</span>
+          </div>
+        </div>
+
+        <!-- Activity 3 -->
+        <div style="padding:0.65rem 0;border-bottom:1px solid var(--border-soft);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span style="font-size:0.8rem;color:var(--text-secondary);">Custody Fee — Q1 2026</span>
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--red);">-$8,750.00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.3rem;">
+            <span style="font-size:0.68rem;color:var(--text-muted);font-family:var(--font-mono);">Mar 10</span>
+            <span class="badge badge-green">Settled</span>
+          </div>
+        </div>
+
+        <!-- Activity 4 — suspicious wire -->
+        <div style="padding:0.65rem 0;border-bottom:1px solid var(--border-soft);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span style="font-size:0.8rem;color:var(--text-secondary);">Wire Transfer — OFFSHORE</span>
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--yellow);font-weight:600;">-$4,500,000.00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.3rem;">
+            <span style="font-size:0.68rem;color:var(--text-muted);font-family:var(--font-mono);">Mar 08</span>
+            <span class="badge badge-yellow">Pending</span>
+          </div>
+        </div>
+
+        <!-- Activity 5 -->
+        <div style="padding:0.65rem 0;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span style="font-size:0.8rem;color:var(--text-secondary);">Interest Credit — MMF</span>
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--green);">+$12,340.00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.3rem;">
+            <span style="font-size:0.68rem;color:var(--text-muted);font-family:var(--font-mono);">Mar 07</span>
+            <span class="badge badge-green">Settled</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

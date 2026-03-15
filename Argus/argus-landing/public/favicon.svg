@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+  <!-- Hexagon -->
+  <path d="M12 2L21.5 7.5V16.5L12 22L2.5 16.5V7.5L12 2Z" fill="#00E5A0" opacity="0.9"/>
+  <!-- Eye shape -->
+  <path d="M6 12C6 12 9 8.5 12 8.5C15 8.5 18 12 18 12C18 12 15 15.5 12 15.5C9 15.5 6 12 6 12Z" fill="#080A0F" opacity="0.85"/>
+  <!-- Iris -->
+  <circle cx="12" cy="12" r="2.2" fill="#00E5A0"/>
+  <!-- Pupil -->
+  <circle cx="12" cy="12" r="1" fill="#080A0F"/>
+</svg>

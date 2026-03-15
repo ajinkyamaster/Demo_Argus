@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Capsule Trust &amp; Savings — Dispute Console{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <!-- PAGE HEADER -->
+  <span class="label">Fraud Operations · Internal</span>
+  <h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:500;color:var(--text-primary);margin-top:0.4rem;">Merchant Dispute Console</h2>
+  <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.4rem;">
+    Restricted to authorised fraud analysts. All queries are logged.
+  </p>
+
+  <div style="margin-top:1.5rem;"></div>
+
+  <!-- SEARCH PANEL -->
+  <div class="card card-static">
+    <div class="card-header">
+      <span class="card-header-title">Search Disputes</span>
+    </div>
+    <div class="card-body">
+      <form method="GET" action="/admin/disputes/search">
+        <div style="display:flex;gap:0.75rem;align-items:flex-end;">
+          <div class="form-group" style="margin-bottom:0;flex:1;">
+            <label class="form-label" for="merchant">Merchant Name</label>
+            <input class="form-input" type="text" id="merchant" name="merchant" placeholder="e.g. ACME Retail, NovaPay..." value="{{ merchant }}">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:auto">Search</button>
+        </div>
+      </form>
+      <div style="margin-top:0.75rem;font-size:0.72rem;color:var(--text-muted);">
+        Recent searches:
+        <a href="/admin/disputes/search?merchant=ACME+Retail" style="color:var(--text-muted);font-size:0.72rem">ACME Retail</a>
+        ·
+        <a href="/admin/disputes/search?merchant=NovaPay" style="color:var(--text-muted);font-size:0.72rem">NovaPay</a>
+      </div>
+    </div>
+  </div>
+
+  {% if merchant %}
+  <div style="margin:1rem 0 0.5rem;font-size:0.8rem;color:var(--text-secondary)">
+    Showing results for: <strong>{{ merchant | safe }}</strong>
+  </div>
+  {% endif %}
+
+  <!-- RESULTS TABLE -->
+  <div class="card card-static" style="margin-top:1rem;">
+    <div class="card-header">
+      <span class="card-header-title">Dispute Records</span>
+      <span style="font-size:0.72rem;color:var(--text-muted);">{{ results|length if results else 3 }} results</span>
+    </div>
+    <div style="padding:0;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Dispute ID</th>
+            <th>Merchant</th>
+            <th>Amount</th>
+            <th>Filed</th>
+            <th>Status</th>
+            <th>Analyst</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="primary mono-val">DSP-20240917-001</td>
+            <td>ACME Retail</td>
+            <td class="mono-val">$2,340.00</td>
+            <td>2024-09-17</td>
+            <td><span class="badge badge-yellow">Under Review</span></td>
+            <td>S. Miller</td>
+          </tr>
+          <tr>
+            <td class="primary mono-val">DSP-20240903-014</td>
+            <td>NovaPay Solutions</td>
+            <td class="mono-val">$18,750.00</td>
+            <td>2024-09-03</td>
+            <td><span class="badge badge-red">Escalated</span></td>
+            <td>R. Vasquez</td>
+          </tr>
+          <tr>
+            <td class="primary mono-val">DSP-20240821-027</td>
+            <td>Orion Freight LLC</td>
+            <td class="mono-val">$6,100.00</td>
+            <td>2024-08-21</td>
+            <td><span class="badge badge-blue">Closed — Fraudulent</span></td>
+            <td>S. Miller</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Capsule Trust &amp; Savings — Legacy Migration{% endblock %}
+
+{% block content %}
+
+<!-- WARNING BANNER -->
+<div style="background:rgba(212,168,75,0.08);border-bottom:1px solid rgba(212,168,75,0.2);padding:0.6rem 0;text-align:center;">
+  <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--yellow);letter-spacing:0.05em;">
+    ⚠  LEGACY SYSTEM  ·  SCHEMA v1.3  ·  MIGRATION IN PROGRESS  ·  CONTACT IT HELPDESK FOR ISSUES  ·  REF: JIRA-CTB-2891
+  </span>
+</div>
+
+<div class="container">
+
+  <!-- PAGE HEADER -->
+  <div style="margin-top:2rem;">
+    <span class="label">Internal · Restricted Access</span>
+    <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:500;color:var(--text-primary);margin-top:0.4rem;">Legacy Core Banking Migration Gateway</h2>
+    <p style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.4rem;line-height:1.7;">
+      Authenticate legacy customer records for migration to CTB Core v4.
+      This portal will be decommissioned upon migration completion.
+    </p>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="card" style="max-width:440px;margin:2rem auto;border-color:#2d2518;">
+    <div class="card-header">
+      <span class="card-header-title">Legacy Authentication</span>
+      <span class="badge badge-yellow">Deprecated</span>
+    </div>
+    <div class="card-body">
+      <form method="POST" action="/corp/legacy-auth">
+        <div class="form-group">
+          <label class="form-label" for="username">Legacy Username</label>
+          <input class="form-input" type="text" id="username" name="username" placeholder="Legacy customer ID" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password">Legacy Password</label>
+          <input class="form-input" type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background:var(--yellow);color:#09090f;">Authenticate</button>
+      </form>
+
+      <div class="divider"></div>
+
+      <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.8;">
+        This system connects directly to the pre-2019 customer database.
+        Credentials are validated against the legacy schema. Do not use
+        your current CTB Core credentials here.<br>
+        For support: it-helpdesk@capsule-trust.com · Ext. 4471
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
